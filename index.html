@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>form</title>
+
+</head>
+
+<body>
+    <form action="" method="get" id="form">
+        <div class="heading">
+            <h1>Sign Up form</h1>
+        </div>
+        
+        <div class="main">
+            <label for="firstName">First Name</label><br>
+            <input class="input" type="text" id="firstName" name="firstName" placeholder="Enter first name"
+                onchange="func1()"><br>
+            <small id="firstspan" class="spanmsg" style="display: none;">please enter first name <br></small>
+            <br>
+            <label for="lastName">Last Name</label><br>
+            <input class="input" type="text" id="lastName" name="lastName" placeholder="Enter last name"
+                onchange="func2()"><br>
+            <small id="lastspan" class="spanmsg" style="display: none;">please enter last name <br></small>
+            <br>
+            <label for="email">Email</label><br>
+            <input class="input" type="email" id="email" name="email" placeholder="Enter email" onchange ="func3()"><br>
+            <small id="emailspan" class="spanmsg" style="display: none;">please enter email <br></small>
+             <br>
+            <label for="birthday">Date of Birth</label><br>
+            <input class="input" type="date" id="birthday" name="birthday" min="1950-01-01" max="2022-12-13"
+                onchange="funcdob()"><br>
+            
+            <br>
+            <label class="input" for="password">Password</label><br>
+            <input class="input" type="password" id="password" name="password" placeholder="Enter your password"
+                onchange="func4()"><br>
+            <br>
+            <label class="input" for="cnfpassword">Confirm Password</label><br>
+            <input class="input" type="password" id="cnfpassword" name="cnfpassword" placeholder="Enter your password"
+                onchange="func5()">
+            <small id="passspan" class="spanmsg" style="display: none;">Password doesn't matched<br></small>
+        </div>
+        
+        <div class="gender-main">
+            <h2 class="gender">Gender</h1><br>
+                <input type="radio" name="gender" id="male" value="male" onchange="gender1()">
+                <label for="male">Male</label><br>
+                <input type="radio" name="gender" id="female" value="female" onchange="gender2()">
+                <label for="male">Female</label><br>
+                <input type="radio" name="gender" id="gender_others" value="others" onchange="gender3()">
+                <label for="others">Others</label>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <div class="skills">
+            <h2>Skills</h2>
+            <br>
+            <input type="checkbox" name="HTML" id="HTML" value="HTML" onchange="skill1()">
+            <label for="HTML">Html</label><br>
+
+
+            <input type="checkbox" name="CSS" id="CSS" value="CSS" onchange="skill2()">
+            <label for="CSS">Css</label><br>
+
+
+            <input type="checkbox" name="javaScript" id="javaScript" value="javaScript" onchange="skill3()">
+            <label for="javaScript">JavaScript</label><br>
+
+            <input type="checkbox" name="Bootstrap" id="Bootstrap" value="Bootstrap" onchange="skill4()">
+            <label for="Bootstrap">Bootstrap</label><br>
+
+            <input type="checkbox" name="react" id="react" value="react" onchange="skill5()">
+            <label for="react">React</label><br>
+            <input type="checkbox" name="others" id="others" value="others" onchange="skill6()">
+            <label for="others">Others</label>
+        </div>
+        <div class="img">
+            <div>
+                <h2 class="upload_img"">Upload Photo</h2>
+               <input type="file" id="image_input" >
+              
+            </div>
+            <div class="preview" id="display_img" style="display: none;"></div>
+        </div>
+        <button id="button" type="submit">submit</button>
+    </form>
+    <script src="./form.js"></script>
+    <script>
+
+        const myobj = {
+            firstName: ' ',
+            lastName: ' ',
+            email: ' ',
+            DOB: ' ',
+            passowrd: ' ',
+            confirmpassword: ' ',
+            gender: ' ',
+            skills: []
+        }
+       
+        const form = document.getElementById("form");
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            print();
+        })
+        // console.log(myobj);
+        function func1() {
+            var firstName = document.getElementById("firstName").value.trim(" ");
+            // console.log(firstName);
+            // console.log(firstName.length);
+            if (firstName.length === 0) {
+                document.getElementById("firstspan").style.display = "inline-block";
+            } else if(firstName.length>0) {
+                myobj.firstName = firstName;
+                document.getElementById("firstspan").style.display = "none";
+            }
+        }
+        function func2() {
+            var lastName = document.getElementById("lastName").value.trim(" ");
+            if (lastName.length === 0) {
+                document.getElementById("lastspan").style.display = "block";
+            } else {
+                myobj.lastName = lastName;
+            }
+            // console.log(lastName);
+        }
+        function func3() {
+            var email = document.getElementById("email").value.trim(" ");
+            // console.log(email);
+            myobj.email = email;
+            // console.log(myobj.email.length);
+            if ( myobj.email.length === 0) {
+                // myobj.email = email;
+                document.getElementById("emailspan").style.display = "block";
+            } else if( myobj.email.length>0){
+                myobj.email = email;
+                document.getElementById("emailspan").style.display = "none";
+            }
+
+        }
+        
+        function funcdob() {
+            var dob = document.getElementById("birthday").value.trim(" ");
+            myobj.DOB = dob;
+        }
+        var pwd = null;
+        function func4() {
+            pwd = document.getElementById("password").value.trim(" ");
+        }
+        function func5() {
+            var cnfpwd = document.getElementById("cnfpassword").value.trim(" ");
+            // console.log(cnfpwd);
+            if (pwd.length > 0 && cnfpwd.length > 0) {
+                if (pwd != cnfpwd) {
+                    document.getElementById("passspan").style.display = "block";
+                } else {
+                    myobj.passowrd = pwd;
+                    myobj.confirmpassword = cnfpwd;
+                }
+            }
+        }
+        var gender = null;
+        function gender1() {
+            gender = document.getElementById("male").value;
+            // console.log(gender);
+            myobj.gender=gender;
+        }
+        function gender2() {
+            gender = document.getElementById("female").value;
+            // console.log(gender);
+            myobj.gender=gender;
+        }
+        function gender3() {
+            gender = document.getElementById("others").value;
+            // console.log(gender);
+            myobj.gender = gender;
+        }
+       
+        function skill1() {
+            var skill1 = document.getElementById("HTML").value;
+            // console.log(skill1);
+            let index = myobj.skills.indexOf(skill1);
+            // console.log(index);
+            if (index < 0) {
+                myobj.skills.push(skill1);
+            }else{
+                myobj.skills.splice(index,1);
+            }
+        }
+        function skill2() {
+            var skill2 = document.getElementById("CSS").value;
+            // console.log(skill2);
+            let index = myobj.skills.indexOf(skill2);
+            // console.log(index);
+            if (index < 0) {
+                myobj.skills.push(skill2);
+            }else{
+                myobj.skills.splice(index,1);
+            }
+        }
+        function skill3() {
+            var skill3 = document.getElementById("javaScript").value;
+            // console.log(skill3);
+            let index = myobj.skills.indexOf(skill3);
+            // console.log(index);
+            if (index < 0) {
+                myobj.skills.push(skill3);
+            }else{
+                myobj.skills.splice(index,1);
+            }
+        }
+        function skill4() {
+            var skill4 = document.getElementById("Bootstrap").value;
+            // console.log(skill4);
+            let index = myobj.skills.indexOf(skill4);
+            // console.log(index);
+            if (index < 0) {
+                myobj.skills.push(skill4);
+            }else{
+                myobj.skills.splice(index,1);
+            }
+        }
+        function skill5() {
+            var skill5 = document.getElementById("react").value;
+            // console.log(skill5);
+            let index = myobj.skills.indexOf(skill5);
+            // console.log(index);
+            if (index < 0) {
+                myobj.skills.push(skill5);
+            }else{
+                myobj.skills.splice(index,1);
+            }
+        }
+        function skill6() {
+            var skill6 = document.getElementById("others").value;
+            // console.log(skill6);
+            let index = myobj.skills.indexOf(skill6);
+            // console.log(index);
+            if (index < 0) {
+                myobj.skills.push(skill6);
+            }else{
+                myobj.skills.splice(index,1);
+            }
+        }
+        function seeimg(){
+            document.getElementById("display_img").style.display="block"
+        }
+
+        function print() {
+            console.log("output", myobj);
+        };
+
+
+    </script>
+</body>
+
+</html>

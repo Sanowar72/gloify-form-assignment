@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'DM Sans', sans-serif;
+}
+body{
+    /* height: 250rem; */
+    background-color: whitesmoke;
+    background-image: url('./pubg-mobile-4k-2020-x8-2880x1800.jpeg');
+    background-image: cover;
+  background-repeat: no-repeat;
+}
+.heading{
+    margin-top: 0;
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    padding: auto auto;
+   font-size: 5rem;
+}
+
+form{
+    /* margin-top: 10rem; */
+    padding: 5rem 10rem;
+    /* background-color: aqua; */
+    max-width: 100rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+h2{
+    font-size: 3rem;
+    font-weight: 700;
+   
+}
+.main input{
+    margin-top: 1rem;
+    display: block;
+    min-width: 80%;
+    margin-top: 1rem;
+    margin-inline: 10rem;
+    height: 5rem;
+    /* border-radius: 5rem; */
+    border: 2px solid violet;
+}
+input[type="text"] {
+    font-size:2.5rem;
+    padding-left: 1rem;
+}
+input[type="email"] {
+    font-size:2.5rem;
+    padding-left: 1rem;
+}
+input[type="date"] {
+    font-size:2.5rem;
+    padding-left: 1rem;
+}
+input[type="password"] {
+    font-size:2.5rem;
+    padding-left: 1rem;
+}
+.main label{
+    font-size: 3rem;
+    margin-inline: 10rem;
+}
+.input{
+ height: 3rem;
+}
+.spanmsg{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 1rem !important;
+    margin-inline-start: 39.5rem;
+    height: 5rem;
+    width: 35rem;
+    padding: 1.2rem 4rem;
+    background-color: red;
+    color: white;
+    border-radius: 5rem;
+    /* display: none; */
+}
+.input::placeholder{
+    /* padding-left: 10rem !important; */
+    /* color: red; */
+    /* margin-left: 5rem !important;
+    text-indent: 10rem !important; */
+    font-size: 2rem;
+    font-style: italic;
+}
+
+.gender-main{
+    margin-inline: 10rem;
+}
+.gender{
+    margin-top: 2rem;
+    /* font-size: 2rem; */
+}
+.gender-main label{
+    font-size: 2.5rem;
+    margin-left: 1.5rem;
+    /* margin-inline: 10rem; */
+}
+.skills label{
+    font-size: 2.5rem;
+    margin-left: 1.5rem;
+}
+.skills {
+    margin: 3rem 0;
+    margin-inline: 10rem;
+}
+input[type="radio"] {
+    /* width: 100%; */
+    height: 2rem;
+    transform: scale(1.3);
+}
+input[type="checkbox"] {
+    /* width: 100%; */
+    height: 2rem;
+    transform: scale(1.3);
+}
+#button{
+    font-family: 'DM Sans', sans-serif;
+    display: inline-block;
+    margin-top: 2rem ;
+    font-size: 2rem;
+    width: 16rem;
+    height: 5rem;
+    padding: 2rem auto;
+    background-color: blueviolet;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+    margin-inline: 10rem;
+}
+#button:hover{
+    background: linear-gradient(53.88deg,#3569f3 11.4%,#ff8e5b 100%);
+}
+.upload_img{
+    margin: 1rem 0;
+}
+.img{
+    display: flex;
+    flex-direction: column;
+    margin-inline: 10rem;
+}
+.preview{
+    margin-top: 1.5rem;
+    height: 200px;
+    width: 300px;
+    border: 1px solid white;
+    /* background-color: aqua; */
+    background-position: center;
+    background-size: cover;
+}
